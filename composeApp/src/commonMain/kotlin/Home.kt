@@ -101,6 +101,15 @@ fun Home() {
                 value = real,
                 onValueChange = {
                     real = it
+
+                    if (real.isEmpty()){
+                        dolar = ""
+                        real = ""
+                    }else{
+                        val valorConvertido = real.toDouble() / 5.12
+                        dolar= valorConvertido.toString()
+                    }
+
                 },
                 label = {
                     Text("Real")
